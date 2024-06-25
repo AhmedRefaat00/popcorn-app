@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+Here's a `README.md` file for your movie application project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```markdown
+# Movie App 🎬
 
-## Available Scripts
+A comprehensive movie application built with React that allows users to search for movies, view details, and manage a list of watched movies.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Search for movies by title.
+- Display a list of movies based on the search query.
+- View detailed information about a selected movie.
+- Add movies to a watched list.
+- Remove movies from the watched list.
+- Persist watched list using local storage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+These instructions will help you set up and run the project on your local machine for development and testing purposes.
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v12 or later)
+- npm (v6 or later) or yarn (v1.22 or later)
 
-### `npm run build`
+### Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/movie-app.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd movie-app
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+    or
+    ```sh
+    yarn install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start the development server, run:
+```sh
+npm start
+```
+or
+```sh
+yarn start
+```
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open the application in your browser.
+2. Use the search bar to find movies by title.
+3. Click on a movie to view its details.
+4. Add the movie to your watched list.
+5. View and manage your watched list.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Code Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `App.js`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The main component of the application.
+- Manages state for the search query, selected movie ID, and watched list.
+- Uses custom hooks `useFetchMovies` for fetching movies and `useLocalStorageState` for persisting the watched list.
 
-## Learn More
+### Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **NavBar**: Contains the logo, search bar, and number of results.
+- **Box**: A wrapper component for layout.
+- **MoviesList**: Displays a list of movies based on the search query.
+- **Summary**: Shows a summary of watched movies.
+- **WatchedList**: Displays the list of watched movies.
+- **Main**: The main layout component.
+- **Logo**: Displays the application logo.
+- **Search**: A search input component for querying movies.
+- **NumResults**: Shows the number of movies found.
+- **MovieDetails**: Displays detailed information about a selected movie.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Hooks
 
-### Code Splitting
+- **useFetchMovies**: Custom hook to fetch movies based on the search query.
+- **useLocalStorageState**: Custom hook to manage state with local storage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Usage
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The app uses the [OMDb API](http://www.omdbapi.com/) to fetch movie data. You need to get an API key from OMDb and add it to your environment variables.
